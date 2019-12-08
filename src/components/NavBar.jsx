@@ -3,11 +3,11 @@ import { Navbar, Icon, NavItem, Chip } from 'react-materialize';
 import logo from '../assets/images/logo.png';
 import { makeStyles } from '@material-ui/styles';
 import NavDropDown from './NavDropDown';
+import data from '../assets/data/content.json';
 
 const useStyles = makeStyles({
   logo: {
     width: '30px',
-    marginLeft: '10%',
     marginTop: '15px',
   },
   navitem: {
@@ -53,12 +53,8 @@ export default function NavBar() {
       menuIcon={<Icon>menu</Icon>}
       className={classes.navbar}
     >
-      <NavDropDown className={classes.navitem} name="Products" kind="product" />
-      <NavDropDown
-        className={classes.navitem}
-        name="Indutries"
-        kind="product"
-      />
+      <NavDropDown className={classes.navitem} data={data[0]} />
+      {/*<NavDropDown className={classes.navitem} data={data[1]} />*/}
       <NavItem className={classes.navitem}>Research</NavItem>
       <NavItem className={classes.navitem}>About</NavItem>
       <NavItem className={classes.navitem}>
