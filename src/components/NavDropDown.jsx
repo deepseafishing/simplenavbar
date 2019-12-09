@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     position: 'relative',
     '&::after': {
       position: 'absolute',
-      bottom: '-2px',
+      bottom: '-3px',
       left: '40%',
       height: '0',
       width: '0',

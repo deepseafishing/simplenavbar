@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     marginTop: '15px',
   },
   navitem: {
-    font: 'Roboto',
+    fontFamily: 'Roboto',
     color: 'white',
     fontSize: '10px',
     fontWeight: 'bold',
@@ -28,6 +28,7 @@ const useStyles = makeStyles({
   },
   chip: {
     fontSize: '10px',
+    fontFamily: 'Roboto',
     lineHeight: '25px',
     height: '25px',
     width: '60px',

@@ -28,8 +28,10 @@ const useStyles = makeStyles({
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 'fit-content',
+    display: 'table',
   },
   col: {
+    fontFamily: 'Roboto',
     margin: '20px 0px',
   },
 });

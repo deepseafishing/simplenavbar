@@ -16,6 +16,7 @@ const useStyles = makeStyles({
     transform: 'translate(-50%, 0)',
   },
   col: {
+    fontFamily: 'Roboto',
     marginLeft: '0px',
     color: 'black',
     marginTop: '20px',
