@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chip } from 'react-materialize';
+import { Chip, Col } from 'react-materialize';
 import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles({
   container: {
@@ -29,18 +29,28 @@ const useStyles = makeStyles({
     transform: 'translate(-50%, -50%)',
     width: 'fit-content',
   },
+  col: {
+    marginLeft: '0px',
+    color: 'white',
+    marginTop: '20px',
+    marginBottom: '20px',
+    height: '128px',
+  },
 });
 
-export default function IndustryItem({ img, label }) {
+export default function IndustryItem({ img, label, href }) {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-      <Chip className={classes.chip}>{label}</Chip>
-      <img
-        src={require(`../assets/images/industries/${img}`)}
-        className={classes.img}
-      />
-    </div>
+    <Col className={classes.col} s={3}>
+      <div className={classes.container}>
+        <Chip className={classes.chip}>{label}</Chip>
+        <img
+          alt={label}
+          src={require(`../assets/images/industries/${img}`)}
+          className={classes.img}
+        />
+      </div>
+    </Col>
   );
 }

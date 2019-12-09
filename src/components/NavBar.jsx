@@ -35,7 +35,6 @@ const useStyles = makeStyles({
     color: 'white',
   },
   signup: {
-    backgroundColor: '#99999A',
     backgroundColor: 'rgba(191, 191, 191, 0.5)',
   },
   login: {
@@ -49,12 +48,14 @@ export default function NavBar() {
   return (
     <Navbar
       alignLinks="right"
-      brand={<img src={logo} className={classes.logo} />}
+      brand={
+        <img src={logo} className={classes.logo} alt="Gro Intelligence Logo" />
+      }
       menuIcon={<Icon>menu</Icon>}
       className={classes.navbar}
     >
       <NavDropDown className={classes.navitem} data={data[0]} />
-      {/*<NavDropDown className={classes.navitem} data={data[1]} />*/}
+      <NavDropDown className={classes.navitem} data={data[1]} />
       <NavItem className={classes.navitem}>Research</NavItem>
       <NavItem className={classes.navitem}>About</NavItem>
       <NavItem className={classes.navitem}>

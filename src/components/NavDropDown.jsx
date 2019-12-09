@@ -1,7 +1,8 @@
 import React from 'react';
-import { Row, Col, NavItem } from 'react-materialize';
+import { Row, NavItem } from 'react-materialize';
 import { makeStyles } from '@material-ui/styles';
 import IndustryItem from './IndustryItem.jsx';
+import ProductItem from './ProductItem.jsx';
 
 const useStyles = makeStyles({
   dropdown: {
@@ -51,28 +52,37 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     marginBottom: '0px',
   },
-  listItem: {
-    marginLeft: '0px',
-    color: 'white',
-    marginTop: '20px',
-    marginBottom: '20px',
-    height: '128px',
-  },
 });
 
-const constructIndustryItems = (subnavList, { listItem }) => {
-  return subnavList.reduce((acc, curr) => {
-    console.log(acc);
-    acc.push(
-      <Col className={listItem} s={3}>
-        <IndustryItem img={curr.img} label={curr.label} />
-      </Col>
-    );
-    return acc;
-  }, []);
+const constructItems = ({ label, subnavList }) => {
+  let ret =
+    label === 'Products'
+      ? subnavList.reduce((acc, curr, idx) => {
+          acc.push(
+            <ProductItem
+              key={idx}
+              label={curr.label}
+              img={curr.img}
+              description={curr.description}
+              href={curr.href}
+              links={curr.links}
+            />
+          );
+          return acc;
+        }, [])
+      : subnavList.reduce((acc, curr, idx) => {
+          acc.push(
+            <IndustryItem
+              key={idx}
+              img={curr.img}
+              label={curr.label}
+              href={curr.href}
+            />
+          );
+          return acc;
+        }, []);
+  return ret;
 };
-
-const constructProductItems = (subnavList, { listItem }) => {};
 
 export default function NavDropDown({ data, className }) {
   const classes = useStyles();
@@ -82,11 +92,7 @@ export default function NavDropDown({ data, className }) {
         {data.label}
       </NavItem>
       <div className={classes.preview}>
-        <Row className={classes.list}>
-          {data.label === 'Products'
-            ? constructProductItems(data.subnavList, classes)
-            : constructIndustryItems(data.subnavList, classes)}
-        </Row>
+        <Row className={classes.list}>{constructItems(data)}</Row>
       </div>
     </div>
   );
