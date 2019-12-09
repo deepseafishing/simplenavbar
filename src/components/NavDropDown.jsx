@@ -1,8 +1,7 @@
 import React from 'react';
 import { Row, NavItem } from 'react-materialize';
 import { makeStyles } from '@material-ui/styles';
-import IndustryItem from './IndustryItem.jsx';
-import ProductItem from './ProductItem.jsx';
+import { constructItems } from './constructUtils';
 
 const useStyles = makeStyles({
   dropdown: {
@@ -54,38 +53,9 @@ const useStyles = makeStyles({
   },
 });
 
-const constructItems = ({ label, subnavList }) => {
-  let ret =
-    label === 'Products'
-      ? subnavList.reduce((acc, curr, idx) => {
-          acc.push(
-            <ProductItem
-              key={idx}
-              label={curr.label}
-              img={curr.img}
-              description={curr.description}
-              href={curr.href}
-              links={curr.links}
-            />
-          );
-          return acc;
-        }, [])
-      : subnavList.reduce((acc, curr, idx) => {
-          acc.push(
-            <IndustryItem
-              key={idx}
-              img={curr.img}
-              label={curr.label}
-              href={curr.href}
-            />
-          );
-          return acc;
-        }, []);
-  return ret;
-};
-
 export default function NavDropDown({ data, className }) {
   const classes = useStyles();
+
   return (
     <div className={classes.dropdown}>
       <NavItem className={`${className} ${classes.submenu}`}>

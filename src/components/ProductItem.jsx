@@ -1,6 +1,9 @@
 import React from 'react';
-import { Col, Chip } from 'react-materialize';
+import { Row, Col, Chip } from 'react-materialize';
 import { makeStyles } from '@material-ui/styles';
+import useMediaQuery from 'react-use-media-query-hook';
+import { constructLinks } from './constructUtils';
+
 const useStyles = makeStyles({
   container: {
     position: 'relative',
@@ -68,44 +71,30 @@ const useStyles = makeStyles({
   },
 });
 
-const constructLinks = (links, { linkList }) => {
-  let ret = [];
-  let children = [];
-  links.forEach((el, idx) => {
-    children.push(
-      <li key={idx}>
-        <span key={'title-' + idx}>{el.title}</span>{' '}
-        <span key={'subtitle-' + idx}>{el.subtitle}</span>
-        <span key={'arrow-icon-' + idx} className="icon-chevron-right1" />
-      </li>
-    );
-  });
-  ret.push(
-    <ul key={'links-list'} className={linkList}>
-      {children}
-    </ul>
-  );
-  return ret;
-};
-
 export default function ProductItem({ label, href, description, img, links }) {
   const classes = useStyles();
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
+  const contents = (
+    <div className={classes.container}>
+      <img
+        src={require(`../assets/images/products/${img}`)}
+        className={classes.img}
+        alt={label}
+      />
+      <h6 className={classes.label}>{label}</h6>
+      <p className={classes.description}>{description}</p>
+      {links ? constructLinks(links, classes) : ''}
+      <Chip className={classes.chip}>
+        Learn More <span className="icon-chevron-right1" />
+      </Chip>
+    </div>
+  );
 
-  return (
+  return isDesktop ? (
     <Col className={classes.col} s={3}>
-      <div className={classes.container}>
-        <img
-          src={require(`../assets/images/products/${img}`)}
-          className={classes.img}
-          alt={label}
-        />
-        <h6 className={classes.label}>{label}</h6>
-        <p className={classes.description}>{description}</p>
-        {links ? constructLinks(links, classes) : ''}
-        <Chip className={classes.chip}>
-          Learn More <span className="icon-chevron-right1" />
-        </Chip>
-      </div>
+      {contents}
     </Col>
+  ) : (
+    <Row className={classes.col}>{contents} </Row>
   );
 }

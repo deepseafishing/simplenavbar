@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navbar, Icon, NavItem, Chip } from 'react-materialize';
+import { Navbar, Icon } from 'react-materialize';
 import logo from '../assets/images/logo.png';
 import { makeStyles } from '@material-ui/styles';
-import NavDropDown from './NavDropDown';
 import data from '../assets/data/content.json';
+import { constructNavBar } from './constructUtils';
 
 const useStyles = makeStyles({
   logo: {
@@ -54,16 +54,7 @@ export default function NavBar() {
       menuIcon={<Icon>menu</Icon>}
       className={classes.navbar}
     >
-      <NavDropDown className={classes.navitem} data={data[0]} />
-      <NavDropDown className={classes.navitem} data={data[1]} />
-      <NavItem className={classes.navitem}>Research</NavItem>
-      <NavItem className={classes.navitem}>About</NavItem>
-      <NavItem className={classes.navitem}>
-        <Chip className={`${classes.chip} ${classes.login}`}>Log in</Chip>
-      </NavItem>
-      <NavItem className={classes.navitem}>
-        <Chip className={`${classes.chip} ${classes.signup}`}>Sign up</Chip>
-      </NavItem>
+      {constructNavBar(data, classes)}
     </Navbar>
   );
 }

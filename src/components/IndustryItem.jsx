@@ -1,6 +1,8 @@
 import React from 'react';
-import { Chip, Col } from 'react-materialize';
+import { Chip, Col, Row } from 'react-materialize';
 import { makeStyles } from '@material-ui/styles';
+import useMediaQuery from 'react-use-media-query-hook';
+
 const useStyles = makeStyles({
   container: {
     position: 'relative',
@@ -8,17 +10,15 @@ const useStyles = makeStyles({
     height: '128px',
     borderRadius: '12px',
     overflow: 'hidden',
-    transition: 'all .8s ease',
     '&:hover img': {
-      transform: 'scale(1.05)',
+      transform: 'scale(1.1)',
       opacity: '0.8',
     },
   },
   img: {
-    backgroundSize: 'cover',
-    width: '208 px',
-    height: '128px',
-    transition: 'all .8s ease',
+    height: '138px',
+    transition: 'all .3s ease',
+    transform: 'scale(1.05)',
   },
   chip: {
     zIndex: '100',
@@ -30,27 +30,28 @@ const useStyles = makeStyles({
     width: 'fit-content',
   },
   col: {
-    marginLeft: '0px',
-    color: 'white',
-    marginTop: '20px',
-    marginBottom: '20px',
-    height: '128px',
+    margin: '20px 0px',
   },
 });
 
 export default function IndustryItem({ img, label, href }) {
   const classes = useStyles();
-
-  return (
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
+  const contents = (
+    <div className={classes.container}>
+      <Chip className={classes.chip}>{label}</Chip>
+      <img
+        alt={label}
+        src={require(`../assets/images/industries/${img}`)}
+        className={classes.img}
+      />
+    </div>
+  );
+  return isDesktop ? (
     <Col className={classes.col} s={3}>
-      <div className={classes.container}>
-        <Chip className={classes.chip}>{label}</Chip>
-        <img
-          alt={label}
-          src={require(`../assets/images/industries/${img}`)}
-          className={classes.img}
-        />
-      </div>
+      {contents}
     </Col>
+  ) : (
+    <Row className={classes.col}>{contents} </Row>
   );
 }
