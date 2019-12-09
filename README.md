@@ -7,7 +7,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the chrome browser.
 
 ### Requirements
 
@@ -23,4 +23,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Code readability and scalability
 - (bonus point) responsiveness support
 
-## I have explanation about the code and the architecture in the code_explain.pdf with the attached images.
+## I have explanation about the code and the architecture in the code_explain.pdf with the attached images. I mostly tested with chrome, firefox and safari browsers.
