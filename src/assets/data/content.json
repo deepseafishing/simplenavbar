@@ -1,49 +1,26 @@
 [
   {
-    "label": "Products",
-    "href": "/products",
+    "label": "Industries",
+    "href": "/industries",
     "subnavList": [
       {
-        "label": "Gro web app",
-        "href": "/products/gro",
-        "description": "Jump straight into analysis through intuitive visualizations that can be monitored on live dashboards",
-        "img": "gro-web-app.png"
+        "label": "Financial Services",
+        "img": "financial-services.jpg"
       },
       {
-        "label": "Gro analytics",
-        "href": "/products/analytics",
-        "description": "Gain a competitive edge by using Gro’s proprietary machine-learning algorithms and predictive models",
-        "img": "gro-analytics.png",
-        "links": [
-          {
-            "title": "US Corn",
-            "subtitle": "Yield Forecast"
-          },
-          {
-            "title": "US Soy",
-            "subtitle": "Yield Forecast"
-          },
-          {
-            "title": "Argentina Soy",
-            "subtitle": "Yield Forecast"
-          }
-        ]
+        "label": "Physical Traders",
+        "img": "physical-traders.jpg"
       },
       {
-        "label": "Gro API",
-        "href": "/products/gro-api",
-        "description": "Gain direct access to Gro’s entire database, including supply, demand, weather, and environment data",
-        "img": "gro-api.jpg"
+        "label": "Sourcing and Procurement",
+        "img": "sources-and-procurement.jpg"
       },
       {
-        "label": "Gro dictionary",
-        "href": "/products/gro-dictionary",
-        "description": "Explore data from our collection of over 8.828M datasets.",
-        "img": "gro-dictionary.png"
+        "label": "Consulting",
+        "img": "consulting.jpg"
       }
     ]
   },
-
   {
     "label": "Research",
     "href": "/research"
