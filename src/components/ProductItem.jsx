@@ -32,7 +32,7 @@ const useStyles = makeStyles({
     marginBottom: '12px',
   },
   description: {
-    fontSize: '10px',
+    fontSize: '13px',
     color: 'grey',
     lineHeight: 'normal',
     textAlign: 'center',
@@ -43,7 +43,7 @@ const useStyles = makeStyles({
     position: 'relative',
     transform: 'translate(-50%, 0)',
     cursor: 'pointer',
-    fontSize: '9px',
+    fontSize: '12px',
     '&:hover': {
       color: 'white',
       backgroundColor: '#E0213D',
@@ -53,7 +53,7 @@ const useStyles = makeStyles({
     marginTop: '10px',
     marginLeft: '2.5em',
     '& > li': {
-      fontSize: '11px',
+      fontSize: '13px',
       lineHeight: '2em',
       height: 'auto',
       margin: '0 auto',

@@ -7,13 +7,13 @@ import { constructNavBar } from './constructUtils';
 
 const useStyles = makeStyles({
   logo: {
-    width: '30px',
-    marginTop: '15px',
+    width: '35px',
+    marginTop: '12.5px',
   },
   navitem: {
     fontFamily: 'Roboto',
     color: 'white',
-    fontSize: '10px',
+    fontSize: '14px',
     fontWeight: 'bold',
     '&:hover': {
       background: 'transparent',
@@ -27,11 +27,12 @@ const useStyles = makeStyles({
     background: 'transparent',
   },
   chip: {
-    fontSize: '10px',
+    fontSize: '12px',
     fontFamily: 'Roboto',
     lineHeight: '25px',
     height: '25px',
-    width: '60px',
+    width: '70px',
+    textAlign: 'center',
     marginRight: '0px',
     color: 'white',
   },
