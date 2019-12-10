@@ -55,7 +55,7 @@ const useStyles = makeStyles({
     '& > li': {
       fontSize: '11px',
       lineHeight: '2em',
-      heigh: 'auto',
+      height: 'auto',
       margin: '0 auto',
       cursor: 'pointer',
       color: '#ABABAE',

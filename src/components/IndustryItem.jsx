@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
   },
   img: {
-    height: '138px',
+    height: '142px',
     transition: 'all .3s ease',
     transform: 'scale(1.05)',
   },
@@ -24,11 +24,11 @@ const useStyles = makeStyles({
     zIndex: '100',
     position: 'absolute',
     cursor: 'pointer',
+    fontSize: '10px',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 'fit-content',
-    display: 'table',
+    width: 'max-content',
   },
   col: {
     fontFamily: 'Roboto',
